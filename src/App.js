@@ -14,8 +14,9 @@ function App() {
     <div className='wrapper'>
       <h1>React Tutorial</h1>
         <TodoList nameArray={todos}/>
+
     </div>
   );
 }
-
+// nameArray={todos} название св-а со значением todos - массива
 export default App;

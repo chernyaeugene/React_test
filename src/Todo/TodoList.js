@@ -10,15 +10,16 @@ const styles = {
         border: '1px solid black',
         borderRadius: '4px'
     },
-    li: {
-        display: 'flex',
-    }
 }
  function TodoList(props) {
+     // props - входные данные. Связан смассивом nameArray
     return (
         <ul style={styles.ul}>
             { props.nameArray.map((item, num) => {
                 return <TodoItem liElement={item} key={item.id} index={num}/>
+                // цикл - перебераем массив чтоб вывести Li
+                // key={item.id} - нужен чтобы помоч React индетеф наш массив
+                // index={num} - ставим перед нашим Li номер строки
             })}
         </ul>
     )

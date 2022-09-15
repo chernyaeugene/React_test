@@ -2,27 +2,22 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const styles = {
-    li: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: '5px 2px',
-        border: 'solid 1px black',
-        borderRadius: '4px',
-        marginBottom: '5px'
+    strong: {
+        marginRight: '10px'
     }
 
 }
  function TodoItem({ liElement, index }) {
+     // { liElement, index } - входные данные
     return(
 
-        <li style={styles.li}>
+        <li className={'listItem'}>
             <span>
-                <input type="checkbox"/>
-                <strong>{index +1}</strong>
+                <input type="checkbox" className={'input_stl'}/>
+                <strong style={styles.strong}>{index +1}</strong>
                 {liElement.title}
             </span>
-            <button>&times;</button>
+            <buttRon className={'radiusBtn'}>&times;</buttRon>
         </li>
     )
 }
