@@ -7,24 +7,33 @@ const styles = {
     }
 
 }
- function TodoItem({ liElement, index }) {
-     // { liElement, index } - входные данные
-    return(
+ function TodoItem({ todo, index, onChange }) {
+     // { work, index, onChange } - входные данные
+     const classes = []
 
+     if (todo.completed) {
+         classes.push('done')
+     }
+
+    return(
         <li className={'listItem'}>
-            <span>
-                <input type="checkbox" className={'input_stl'}/>
+            <span className={classes.join(' ')}>
+                <input type="checkbox"
+                       checked={todo.completed}
+                       className={'input_stl'}
+                       onChange={() => onChange(todo.id)}/>
                 <strong style={styles.strong}>{index +1}</strong>
-                {liElement.title}
+                {todo.title}
             </span>
-            <buttRon className={'radiusBtn'}>&times;</buttRon>
+            <button className={'radiusBtn'}>&times;</button>
         </li>
     )
 }
 
 
 TodoItem.propTypes = {
-     liElement: PropTypes.object.isRequired,
-    index: PropTypes.number.isRequired
+    todo: PropTypes.object.isRequired,
+    index: PropTypes.number.isRequired,
+    onChange: PropTypes.func.isRequired
 }
 export default TodoItem

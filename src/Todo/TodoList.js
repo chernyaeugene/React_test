@@ -15,18 +15,22 @@ const styles = {
      // props - входные данные. Связан смассивом nameArray
     return (
         <ul style={styles.ul}>
-            { props.nameArray.map((item, num) => {
-                return <TodoItem liElement={item} key={item.id} index={num}/>
+            {props.todos.map((todo, index) => {
+                return <TodoItem todo={todo}
+                                 key={todo.id}
+                                 index={index}
+                                 onChange={props.someThing}/>
                 // цикл - перебераем массив чтоб вывести Li
-                // key={item.id} - нужен чтобы помоч React индетеф наш массив
-                // index={num} - ставим перед нашим Li номер строки
+                // key={work.id} - нужен чтобы помоч React индетеф наш массив
+                // index={index} - ставим перед нашим Li номер строки
             })}
         </ul>
     )
 }
 
 TodoList.propTypes = {
-    nameArray: PropTypes.arrayOf(PropTypes.object).isRequired
+    todos: PropTypes.arrayOf(PropTypes.object).isRequired,
+    someThing: PropTypes.func.isRequired
 }
 
 export default TodoList

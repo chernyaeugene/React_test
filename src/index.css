@@ -42,3 +42,6 @@ code {
   height: 35px;
   text-align: center;
 }
+.done {
+  text-decoration: line-through;
+}
