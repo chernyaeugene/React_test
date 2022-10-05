@@ -21,7 +21,7 @@ const styles = {
                                  index={index}
                                  onChange={props.someThing}/>
                 // цикл - перебераем массив чтоб вывести Li
-                // key={work.id} - нужен чтобы помоч React индетеф наш массив
+                // key={todo.id} - нужен чтобы помоч React индетеф наш массив
                 // index={index} - ставим перед нашим Li номер строки
             })}
         </ul>
