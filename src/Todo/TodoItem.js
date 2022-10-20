@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
+import Context from "../context";
+
+// useContext - хук позволяет передавать в приложение и получать доступ к данным сквозь компоненты
 
 const styles = {
     strong: {
@@ -9,6 +12,9 @@ const styles = {
 }
  function TodoItem({ todo, index, onChange }) {
      // { work, index, onChange } - входные данные
+     const {removeTodo} = useContext(Context)
+     // получаем доступ к ф-и removeTodo с помощью useContext(Context)
+
      const classes = []
 
      if (todo.completed) {
@@ -27,7 +33,10 @@ const styles = {
                 <strong style={styles.strong}>{index +1}</strong>
                 {todo.title}
             </span>
-            <button className={'radiusBtn'}>&times;</button>
+            <button className={'radiusBtn'} onClick={removeTodo.bind(null, todo.id)}>
+                &times;
+            </button>
+            {/*onClick={removeTodo.bind(null, todo.id)} - при нажатии вызывается ф-я removeTodo отложено. bind(null - неважный параметр */}
         </li>
     )
 }
