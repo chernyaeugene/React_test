@@ -57,7 +57,9 @@ p {
   height: 34px;
   border-radius: 4px;
   margin-right: 20px;
-
+  font-size: 25px;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
 }
 .addItem {
   height: 40px;
