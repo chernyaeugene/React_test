@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import Context from "../context";
 
-// useContext - хук позволяет передавать в приложение и получать доступ к данным сквозь компоненты
 
 const styles = {
     strong: {

@@ -1,0 +1,24 @@
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgb(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    padding-top: 0.5rem;
+}
+
+.modal_body {
+    width: 400px;
+    height: 200px;
+    border-radius: 5px;
+    background: white;
+    margin-top: 190px;
+    padding-left: 30px;
+}
+
+.opn_btn {
+    margin-bottom: 20px;
+}

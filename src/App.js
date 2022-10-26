@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useEffect} from "react";
 import TodoList from "./Todo/TodoList";
 import Context from "./context";
 import AddTodo from "./Todo/AddTodo";
+import Modal from "./Modal/Modal";
 
 function App() {
     const [todos, setTodos] = React.useState([
@@ -10,6 +11,7 @@ function App() {
         {id: 3, completed: false, title: 'Купить газетy'},
         {id: 4, completed: false, title: 'Купить селезенку'}
     ])
+
 
     function thingSome(id) {
 
@@ -44,6 +46,7 @@ function App() {
       <Context.Provider value={{removeTodo}}>
           <div className='wrapper'>
               <h1>React Tutorial</h1>
+              <Modal/>
               <AddTodo onCreate={addTodo}/>
               {todos.length ? <TodoList todos={todos} someThing={thingSome}/> : <p>Life is Good!</p>}
           </div>
